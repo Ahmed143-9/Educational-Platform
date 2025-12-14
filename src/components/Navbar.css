@@ -1,0 +1,44 @@
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+/* Custom styles to match your brand colors */
+.navbar {
+  background-color: #282c34 !important;
+  height: 80px;
+}
+
+.btn-primary {
+  background-color: #61dafb;
+  border-color: #61dafb;
+  color: #282c34;
+}
+
+.btn-primary:hover {
+  background-color: #4ac5f1;
+  border-color: #4ac5f1;
+  color: #282c34;
+}
+
+/* Mobile Menu Styles */
+@media screen and (max-width: 991px) {
+  .navbar {
+    height: auto;
+    min-height: 60px;
+  }
+  
+  .navbar-nav {
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  .btn-primary {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
