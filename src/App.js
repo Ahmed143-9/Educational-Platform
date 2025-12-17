@@ -12,6 +12,7 @@ import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
 import NotFoundPage from './pages/NotFoundPage';
 import PaymentPage from './pages/PaymentPage';
+import ScholarshipPage from './pages/ScholarshipPage';
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/payment" element={<PaymentPage />} />
+            <Route path="/scholarship" element={<ScholarshipPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Footer />

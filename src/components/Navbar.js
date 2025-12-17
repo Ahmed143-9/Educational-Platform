@@ -55,33 +55,33 @@ const Navbar = () => {
                 Exam
               </Link>
             </li>
-            {!isAuthenticated ? (
-              <>
-                <li className="nav-item">
-                  <Link to="/login" className="btn btn-outline-light ms-2" onClick={closeMobileMenu}>
-                    Login
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/register" className="btn btn-primary ms-2" onClick={closeMobileMenu}>
-                    Register
-                  </Link>
-                </li>
-              </>
-            ) : (
-              <>
-                <li className="nav-item dropdown">
-                  <a 
-                    className="nav-link dropdown-toggle" 
-                    href="#" 
-                    id="userDropdown" 
-                    role="button" 
-                    data-bs-toggle="dropdown" 
-                    aria-expanded="false"
-                  >
-                    {user?.name || 'User'}
-                  </a>
-                  <ul className="dropdown-menu" aria-labelledby="userDropdown">
+            <li className="nav-item dropdown">
+              <a 
+                className="nav-link dropdown-toggle" 
+                href="#" 
+                id="userDropdown" 
+                role="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false"
+              >
+                {isAuthenticated ? (user?.name || 'User') : 'Account'}
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="userDropdown">
+                {!isAuthenticated ? (
+                  <>
+                    <li>
+                      <Link to="/login" className="dropdown-item" onClick={closeMobileMenu}>
+                        Login
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/register" className="dropdown-item" onClick={closeMobileMenu}>
+                        Register
+                      </Link>
+                    </li>
+                  </>
+                ) : (
+                  <>
                     <li>
                       <Link to="/dashboard" className="dropdown-item" onClick={closeMobileMenu}>
                         Dashboard
@@ -103,15 +103,15 @@ const Navbar = () => {
                         Logout
                       </button>
                     </li>
-                  </ul>
-                </li>
-                <li className="nav-item">
-                  <Link to="/scholarship" className="btn btn-primary ms-2" onClick={closeMobileMenu}>
-                    Scholarship
-                  </Link>
-                </li>
-              </>
-            )}
+                  </>
+                )}
+              </ul>
+            </li>
+            <li className="nav-item">
+              <Link to="/scholarship" className="btn btn-primary ms-2" onClick={closeMobileMenu}>
+                Scholarship
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
