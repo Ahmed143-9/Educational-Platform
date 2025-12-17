@@ -137,27 +137,44 @@ const HomePage = () => {
   if (loading) {
     return (
       <div className="home-page">
-        <section className="hero-section">
-          <div className="hero-overlay"></div>
-          <div className="hero-content">
-            <h1 className="hero-title">Unlock Your Potential</h1>
-            <p className="hero-subtitle">
-              Discover the power of learning with our expert-led courses designed to advance your career and personal growth.
-            </p>
-            <div className="hero-buttons">
-              <Link to="/scholarship" className="btn btn-primary">
-                <i className="fas fa-graduation-cap"></i> Scholarship
-              </Link>
-              <button className="btn btn-secondary" onClick={handleExploreCourses}>
-                <i className="fas fa-search"></i> Explore Courses
-              </button>
-              <button className="btn btn-accent" onClick={handleGetStarted}>
-                <i className="fas fa-rocket"></i> Get Started
-              </button>
-            </div>
-          </div>
-        </section>
-        
+       <section className="hero-section">
+    <div className="hero-image-wrapper">
+      {/* Image will be set via CSS */}
+    </div>
+    <div className="hero-content">
+      <h1 className="hero-title">Unlock Your Potential</h1>
+      <p className="hero-subtitle">
+        Discover the power of learning with our expert-led courses designed to advance your career and personal growth.
+      </p>
+      
+      <div className="hero-buttons">
+        <Link to="/scholarship" className="btn btn-primary">
+          <i className="fas fa-graduation-cap"></i> Scholarship
+        </Link>
+        <button className="btn btn-secondary" onClick={handleExploreCourses}>
+          <i className="fas fa-search"></i> Explore Courses
+        </button>
+        <button className="btn btn-outline" onClick={handleGetStarted}>
+          <i className="fas fa-play-circle"></i> Watch Demo
+        </button>
+      </div>
+      
+      <div className="hero-features">
+        <div className="feature">
+          <i className="fas fa-certificate"></i>
+          <span>Certified Courses</span>
+        </div>
+        <div className="feature">
+          <i className="fas fa-chart-line"></i>
+          <span>Career Growth</span>
+        </div>
+        <div className="feature">
+          <i className="fas fa-users"></i>
+          <span>Live Support</span>
+        </div>
+      </div>
+    </div>
+  </section>
         <section className="courses-section">
           <div className="container">
             <div className="section-header">
@@ -180,7 +197,7 @@ const HomePage = () => {
   if (error) {
     return (
       <div className="home-page">
-        <section className="hero-section">
+        <section className="hero-section" style={{ backgroundImage: `url(${MainHero})` }}>
           <div className="hero-overlay"></div>
           <div className="hero-content">
             <h1 className="hero-title">Unlock Your Potential</h1>
@@ -194,9 +211,9 @@ const HomePage = () => {
               <button className="btn btn-secondary" onClick={handleExploreCourses}>
                 <i className="fas fa-search"></i> Explore Courses
               </button>
-              <button className="btn btn-accent" onClick={handleGetStarted}>
+              {/* <button className="btn btn-accent" onClick={handleGetStarted}>
                 <i className="fas fa-rocket"></i> Get Started
-              </button>
+              </button> */}
             </div>
           </div>
         </section>
@@ -220,7 +237,7 @@ const HomePage = () => {
   return (
     <div className="home-page">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section className="hero-section" style={{ backgroundImage: `url(${MainHero})` }}>
         <div className="hero-overlay"></div>
         <div className="hero-content">
           {/* <div className="hero-badge">Top Rated Platform</div> */}
@@ -249,231 +266,259 @@ const HomePage = () => {
             <button className="btn btn-secondary" onClick={handleExploreCourses}>
               <i className="fas fa-search"></i> Explore Courses
             </button>
-            <button className="btn btn-accent" onClick={handleGetStarted}>
+            {/* <button className="btn btn-accent" onClick={handleGetStarted}>
               <i className="fas fa-rocket"></i> Get Started
-            </button>
+            </button> */}
           </div>
         </div>
       </section>
 
       {/* Courses Section */}
       <section className="courses-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Featured Courses</h2>
-            <p className="section-description">
-              Our expert instructors have curated the best courses to help you achieve your goals.
-            </p>
-            <Link to="/courses" className="btn-text">
-              View All Courses <i className="fas fa-arrow-right"></i>
-            </Link>
-          </div>
-          
-          <div className="courses-grid">
-            {courses.map(course => (
-              <div key={course.id} className="course-card">
-                <div className="course-badge">{course.category}</div>
-                <div className="course-image">
-                  <div className="placeholder-image">
-                    <i className="fas fa-graduation-cap"></i>
-                  </div>
-                  <div className="course-rating">
-                    <i className="fas fa-star"></i> {course.rating}
-                  </div>
-                </div>
-                <div className="course-info">
-                  <div className="course-header">
-                    <h3 className="course-title">{course.title}</h3>
-                    <span className="course-price">{course.price}</span>
-                  </div>
-                  <p className="course-description">{course.description}</p>
-                  <div className="course-meta">
-                    <div className="meta-item">
-                      <i className="fas fa-user"></i>
-                      <span>{course.instructor}</span>
-                    </div>
-                    <div className="meta-item">
-                      <i className="fas fa-clock"></i>
-                      <span>{course.duration}</span>
-                    </div>
-                    <div className="meta-item">
-                      <i className="fas fa-users"></i>
-                      <span>{course.students}</span>
-                    </div>
-                  </div>
-                  <div className="course-level">
-                    <span className={`level-badge ${course.level.toLowerCase()}`}>
-                      {course.level}
-                    </span>
-                  </div>
-                </div>
+  <div className="container">
+    <div className="section-header">
+      <div className="header-content">
+        <span className="section-subtitle">Learn & Grow</span>
+        <h2 className="section-title">Featured Courses</h2>
+        <p className="section-description">
+          Our expert instructors have curated the best courses to help you achieve your goals.
+        </p>
+      </div>
+      <Link to="/courses" className="section-link">
+        View All Courses <i className="fas fa-arrow-right"></i>
+      </Link>
+    </div>
+    
+    <div className="courses-grid">
+      {courses.map(course => (
+        <div key={course.id} className="course-card">
+          <div className="course-image">
+            <div className="image-placeholder">
+              <i className="fas fa-graduation-cap"></i>
+            </div>
+            <div className="course-overlay">
+              <span className="course-category">{course.category}</span>
+              <div className="course-rating">
+                <i className="fas fa-star"></i>
+                <span>{course.rating}</span>
               </div>
-            ))}
+            </div>
+          </div>
+          <div className="course-content">
+            <div className="course-header">
+              <h3 className="course-title">{course.title}</h3>
+              <span className="course-price">{course.price}</span>
+            </div>
+            <p className="course-description">{course.description}</p>
+            
+            <div className="course-details">
+              <div className="detail-item">
+                <i className="fas fa-user"></i>
+                <span>{course.instructor}</span>
+              </div>
+              <div className="detail-item">
+                <i className="fas fa-clock"></i>
+                <span>{course.duration}</span>
+              </div>
+              <div className="detail-item">
+                <i className="fas fa-users"></i>
+                <span>{course.students}</span>
+              </div>
+            </div>
+            
+            <div className="course-footer">
+              <span className={`course-level level-${course.level.toLowerCase()}`}>
+                {course.level}
+              </span>
+              <button className="course-enroll-btn">
+                <i className="fas fa-shopping-cart"></i> Enroll Now
+              </button>
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* CTA Section */}
       <section className="cta-section">
-        <div className="container">
-          <div className="cta-content">
-            <h2 className="cta-title">Ready to Transform Your Career?</h2>
-            <p className="cta-description">
-              Join thousands of successful learners who have transformed their careers with our courses.
-            </p>
-            <div className="cta-buttons">
-              <Link to="/signup" className="btn btn-primary btn-lg">
-                <i className="fas fa-user-plus"></i> Start Learning Free
-              </Link>
-              <Link to="/demo" className="btn btn-outline btn-lg">
-                <i className="fas fa-play-circle"></i> Watch Demo
-              </Link>
-            </div>
+  <div className="container">
+    <div className="cta-card">
+      <div className="cta-content">
+        <span className="cta-badge">Limited Time Offer</span>
+        <h2 className="cta-title">Ready to Transform Your Career?</h2>
+        <p className="cta-description">
+          Join thousands of successful learners who have transformed their careers with our courses.
+          Start your journey today with our free trial.
+        </p>
+        
+        <div className="cta-features">
+          <div className="feature">
+            <i className="fas fa-check-circle"></i>
+            <span>7-day free trial</span>
+          </div>
+          <div className="feature">
+            <i className="fas fa-check-circle"></i>
+            <span>Cancel anytime</span>
+          </div>
+          <div className="feature">
+            <i className="fas fa-check-circle"></i>
+            <span>Certificate included</span>
           </div>
         </div>
-      </section>
+        
+        <div className="cta-buttons">
+          <Link to="/signup" className="btn btn-primary btn-lg">
+            <i className="fas fa-rocket"></i> Start Learning Free
+          </Link>
+          <Link to="/demo" className="btn btn-outline-white btn-lg">
+            <i className="fas fa-play-circle"></i> Watch Demo
+          </Link>
+        </div>
+        
+        <p className="cta-note">
+          <i className="fas fa-shield-alt"></i> Secure sign-up · No credit card required
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Library Preview Section */}
-      <section className="library-preview">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Learning Resources</h2>
-            <p className="section-description">
-              Access our extensive library of educational materials, ebooks, and research papers.
-            </p>
-          </div>
-          
-          <div className="library-stats">
-            <div className="stat-card">
-              <div className="stat-icon">
-                <i className="fas fa-book"></i>
-              </div>
-              <h3 className="stat-number">1000+</h3>
-              <p className="stat-label">Ebooks & Guides</p>
-            </div>
-            <div className="stat-card">
-              <div className="stat-icon">
-                <i className="fas fa-file-alt"></i>
-              </div>
-              <h3 className="stat-number">500+</h3>
-              <p className="stat-label">Research Papers</p>
-            </div>
-            <div className="stat-card">
-              <div className="stat-icon">
-                <i className="fas fa-video"></i>
-              </div>
-              <h3 className="stat-number">200+</h3>
-              <p className="stat-label">Video Tutorials</p>
-            </div>
-            <div className="stat-card">
-              <div className="stat-icon">
-                <i className="fas fa-chart-line"></i>
-              </div>
-              <h3 className="stat-number">50+</h3>
-              <p className="stat-label">Case Studies</p>
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <Link to="/library" className="btn btn-secondary">
-              <i className="fas fa-archive"></i> Explore Library
-            </Link>
-          </div>
+      <section className="library-section">
+  <div className="container">
+    <div className="section-header">
+      <span className="section-subtitle">Knowledge Hub</span>
+      <h2 className="section-title">Learning Resources</h2>
+      <p className="section-description">
+        Access our extensive library of educational materials, ebooks, and research papers.
+      </p>
+    </div>
+    
+    <div className="resources-grid">
+      <div className="resource-card">
+        <div className="resource-icon">
+          <i className="fas fa-book-open"></i>
         </div>
-      </section>
+        <h3 className="resource-title">Ebooks & Guides</h3>
+        <div className="resource-count">1,000+</div>
+        <p className="resource-description">
+          Comprehensive guides and reference materials for all skill levels
+        </p>
+        <Link to="/library/ebooks" className="resource-link">
+          Explore Ebooks <i className="fas fa-arrow-right"></i>
+        </Link>
+      </div>
+      
+      <div className="resource-card">
+        <div className="resource-icon">
+          <i className="fas fa-file-pdf"></i>
+        </div>
+        <h3 className="resource-title">Research Papers</h3>
+        <div className="resource-count">500+</div>
+        <p className="resource-description">
+          Academic papers and industry research for deep learning
+        </p>
+        <Link to="/library/research" className="resource-link">
+          View Research <i className="fas fa-arrow-right"></i>
+        </Link>
+      </div>
+      
+      <div className="resource-card">
+        <div className="resource-icon">
+          <i className="fas fa-video"></i>
+        </div>
+        <h3 className="resource-title">Video Tutorials</h3>
+        <div className="resource-count">200+</div>
+        <p className="resource-description">
+          Step-by-step video guides and tutorial sessions
+        </p>
+        <Link to="/library/videos" className="resource-link">
+          Watch Videos <i className="fas fa-arrow-right"></i>
+        </Link>
+      </div>
+      
+      <div className="resource-card">
+        <div className="resource-icon">
+          <i className="fas fa-chart-bar"></i>
+        </div>
+        <h3 className="resource-title">Case Studies</h3>
+        <div className="resource-count">50+</div>
+        <p className="resource-description">
+          Real-world applications and success stories
+        </p>
+        <Link to="/library/case-studies" className="resource-link">
+          Read Cases <i className="fas fa-arrow-right"></i>
+        </Link>
+      </div>
+    </div>
+    
+    <div className="section-footer">
+      <Link to="/library" className="btn btn-secondary">
+        <i className="fas fa-search"></i> Browse Full Library
+      </Link>
+    </div>
+  </div>
+</section>
 
       {/* Exam Preview Section */}
-      <section className="exam-preview">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Practice Exams & Assessments</h2>
-            <p className="section-description">
-              Test your knowledge with our comprehensive exam preparation tools.
-            </p>
-          </div>
-          
-          <div className="exam-types">
-            <div className="exam-card">
-              <div className="exam-icon">
-                <i className="fas fa-certificate"></i>
-              </div>
-              <h3 className="exam-title">Certification Prep</h3>
-              <p className="exam-description">
-                Prepare for industry certifications with our comprehensive practice tests
-              </p>
-              <ul className="exam-features">
-                <li><i className="fas fa-check"></i> Real exam simulations</li>
-                <li><i className="fas fa-check"></i> Detailed explanations</li>
-                <li><i className="fas fa-check"></i> Performance analytics</li>
-              </ul>
-            </div>
-            
-            <div className="exam-card featured">
-              <div className="exam-icon">
-                <i className="fas fa-clock"></i>
-              </div>
-              <h3 className="exam-title">Mock Exams</h3>
-              <p className="exam-description">
-                Simulate real exam conditions with timed assessments and adaptive questions
-              </p>
-              <ul className="exam-features">
-                <li><i className="fas fa-check"></i> Timed assessments</li>
-                <li><i className="fas fa-check"></i> Adaptive difficulty</li>
-                <li><i className="fas fa-check"></i> Instant scoring</li>
-              </ul>
-            </div>
-            
-            <div className="exam-card">
-              <div className="exam-icon">
-                <i className="fas fa-chart-bar"></i>
-              </div>
-              <h3 className="exam-title">Progress Tracking</h3>
-              <p className="exam-description">
-                Monitor your improvement with detailed analytics and personalized recommendations
-              </p>
-              <ul className="exam-features">
-                <li><i className="fas fa-check"></i> Performance tracking</li>
-                <li><i className="fas fa-check"></i> Weakness analysis</li>
-                <li><i className="fas fa-check"></i> Learning path suggestions</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <Link to="/exam" className="btn btn-primary">
-              <i className="fas fa-play-circle"></i> Start Practicing
-            </Link>
-          </div>
-        </div>
-      </section>
+    
 
       {/* Newsletter Section */}
       <section className="newsletter-section">
-        <div className="container">
-          <div className="newsletter-content">
-            <h2 className="newsletter-title">Stay Updated</h2>
-            <p className="newsletter-description">
-              Subscribe to our newsletter for the latest courses, resources, and learning tips.
-            </p>
-            <form className="newsletter-form">
-              <div className="form-group">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="form-input"
-                  required
-                />
-                <button type="submit" className="btn btn-primary">
-                  <i className="fas fa-paper-plane"></i> Subscribe
-                </button>
-              </div>
-              <p className="form-note">
-                By subscribing, you agree to our Privacy Policy and consent to receive updates.
-              </p>
-            </form>
-          </div>
+  <div className="container">
+    <div className="newsletter-card">
+      <div className="newsletter-content">
+        <div className="newsletter-header">
+          <h2 className="newsletter-title">Stay Updated</h2>
+          <p className="newsletter-subtitle">
+            Get the latest courses, resources, and learning tips delivered to your inbox.
+          </p>
         </div>
-      </section>
+        
+        <form className="newsletter-form">
+          <div className="form-container">
+            <div className="input-group">
+              <div className="input-icon">
+                <i className="fas fa-envelope"></i>
+              </div>
+              <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                className="form-input"
+                required
+              />
+              <button type="submit" className="btn btn-primary">
+                <i className="fas fa-paper-plane"></i> Subscribe
+              </button>
+            </div>
+            
+            <div className="form-features">
+              <div className="feature">
+                <i className="fas fa-check"></i>
+                <span>Weekly updates</span>
+              </div>
+              <div className="feature">
+                <i className="fas fa-check"></i>
+                <span>Exclusive content</span>
+              </div>
+              <div className="feature">
+                <i className="fas fa-check"></i>
+                <span>No spam ever</span>
+              </div>
+            </div>
+          </div>
+          
+          <p className="form-note">
+            <i className="fas fa-lock"></i> Your information is secure. By subscribing, 
+            you agree to our <Link to="/privacy">Privacy Policy</Link> and consent to receive updates.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   );
 };
