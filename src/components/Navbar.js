@@ -37,7 +37,7 @@ const Navbar = () => {
     <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? 'scrolled' : ''}`}>
       <div className="container-fluid">
         <Link to="/" className="navbar-brand" onClick={closeMobileMenu}>
-          <img src={LogoWhite} alt="CourseApp Logo" className="logo" />
+          <img src={LogoWhite} alt="Saif Academy Logo" className="logo" />
           <span className="brand-name">Saif Academy</span>
         </Link>
         <button 

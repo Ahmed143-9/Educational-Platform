@@ -7,15 +7,15 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>CourseApp</h3>
+            <h3>Saif Academy</h3>
             <p>
               Empowering learners worldwide with quality education and practical skills for the future.
             </p>
             <div className="social-links">
-              <a href="#" className="social-link">Facebook</a>
-              <a href="#" className="social-link">Twitter</a>
-              <a href="#" className="social-link">LinkedIn</a>
-              <a href="#" className="social-link">Instagram</a>
+              <a href="#" className="social-link">F</a>
+              <a href="#" className="social-link">T</a>
+              <a href="#" className="social-link">L</a>
+              <a href="#" className="social-link">I</a>
             </div>
           </div>
           
@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Contact Us</h4>
             <address>
-              <p>Email: info@courseapp.com</p>
+              <p>Email: info@Saif Academy.com</p>
               <p>Phone: +1 (555) 123-4567</p>
               <p>Address: 123 Education St, Learning City</p>
             </address>
@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} CourseApp. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Saif Academy. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -2,6 +2,32 @@ import React, { useState, useEffect } from 'react';
 import { examAPI } from '../services/api';
 import './ExamPage.css';
 
+const liveClassLinks = [
+  {
+    id: 1,
+    date: "Today",
+    subject: "React",
+    title: "React Hooks Deep Dive",
+    time: "8:00 PM",
+    instructor: "John Doe",
+    zoomLink: "https://zoom.us/"
+  },
+  {
+    id: 2,
+    date: "Tomorrow",
+    subject: "JavaScript",
+    title: "JavaScript ES6+",
+    time: "7:30 PM",
+    instructor: "Jane Smith",
+    zoomLink: "https://zoom.us/"
+  }
+];
+
+// Handle join meeting
+const handleJoinMeeting = (link) => {
+  window.open(link, '_blank');
+};
+
 const ExamPage = () => {
   const [exams, setExams] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -136,6 +162,53 @@ const ExamPage = () => {
           <p className="page-subtitle">
             Master your skills and boost your confidence with our comprehensive exam preparation tools
           </p>
+        </div>
+      </section>
+
+       {/* Live Class Links Section - NEW SECTION */}
+      <section className="live-class-links">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Live Class Links</h2>
+            <p className="section-description">
+              Join daily live classes by clicking the Join button. Admin updates links daily.
+            </p>
+          </div>
+          
+          <div className="class-links-grid">
+            {liveClassLinks.map(classLink => (
+              <div key={classLink.id} className="class-link-card">
+                <div className="class-link-header">
+                  <span className="class-date">{classLink.date}</span>
+                  <span className="class-subject">{classLink.subject}</span>
+                </div>
+                
+                <div className="class-link-content">
+                  <h3 className="class-title">{classLink.title}</h3>
+                  
+                  <div className="class-details">
+                    <div className="detail">
+                      <i className="fas fa-clock"></i>
+                      <span>{classLink.time}</span>
+                    </div>
+                    <div className="detail">
+                      <i className="fas fa-user"></i>
+                      <span>{classLink.instructor}</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="class-link-footer">
+                  <button 
+                    className="btn btn-primary"
+                    onClick={() => handleJoinMeeting(classLink.zoomLink)}
+                  >
+                    <i className="fas fa-video"></i> Join Class
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

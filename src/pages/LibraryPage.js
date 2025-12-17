@@ -185,27 +185,7 @@ const LibraryPage = () => {
         </div>
       </section>
 
-      <section className="recent-resources">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Recently Added</h2>
-            <button className="btn secondary-btn">View All Resources</button>
-          </div>
-          <div className="resources-list">
-            {resources.map(resource => (
-              <div key={resource.id} className="resource-item">
-                <div className="resource-type">{resource.type}</div>
-                <div className="resource-info">
-                  <h3 className="resource-title">{resource.title}</h3>
-                  <p className="resource-author">by {resource.author}</p>
-                  <p className="resource-date">Added on {resource.date}</p>
-                </div>
-                <button className="btn primary-btn">Access</button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       <section className="library-features">
         <div className="container">

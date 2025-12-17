@@ -175,7 +175,7 @@ const HomePage = () => {
       </div>
     </div>
   </section>
-        <section className="courses-section">
+        {/* <section className="courses-section">
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">Featured Courses</h2>
@@ -189,7 +189,7 @@ const HomePage = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     );
   }
@@ -274,7 +274,7 @@ const HomePage = () => {
       </section>
 
       {/* Courses Section */}
-      <section className="courses-section">
+      {/* <section className="courses-section">
   <div className="container">
     <div className="section-header">
       <div className="header-content">
@@ -339,7 +339,7 @@ const HomePage = () => {
       ))}
     </div>
   </div>
-</section>
+</section> */}
 
       {/* CTA Section */}
       <section className="cta-section">
@@ -386,7 +386,7 @@ const HomePage = () => {
 </section>
 
       {/* Library Preview Section */}
-      <section className="library-section">
+      {/* <section className="library-section">
   <div className="container">
     <div className="section-header">
       <span className="section-subtitle">Knowledge Hub</span>
@@ -460,7 +460,7 @@ const HomePage = () => {
       </Link>
     </div>
   </div>
-</section>
+</section> */}
 
       {/* Exam Preview Section */}
     

@@ -182,7 +182,7 @@ const CoursesPage = () => {
           <p className="section-description">
             Share your knowledge and earn money by creating online courses
           </p>
-          <button className="btn secondary-btn">Teach on CourseApp</button>
+          <button className="btn secondary-btn">Teach on Saif Academy</button>
         </div>
       </section>
     </div>
