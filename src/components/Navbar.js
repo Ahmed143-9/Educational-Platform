@@ -55,7 +55,7 @@ const Navbar = () => {
                 Exam
               </Link>
             </li>
-            <li className="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
               <a 
                 className="nav-link dropdown-toggle" 
                 href="#" 
@@ -106,7 +106,7 @@ const Navbar = () => {
                   </>
                 )}
               </ul>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link to="/scholarship" className="btn btn-primary ms-2" onClick={closeMobileMenu}>
                 Scholarship

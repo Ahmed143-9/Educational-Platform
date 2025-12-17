@@ -223,12 +223,12 @@ const HomePage = () => {
       <section className="hero-section">
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <div className="hero-badge">Top Rated Platform</div>
+          {/* <div className="hero-badge">Top Rated Platform</div> */}
           <h1 className="hero-title">Unlock Your Potential</h1>
           <p className="hero-subtitle">
             Discover the power of learning with our expert-led courses designed to advance your career and personal growth.
           </p>
-          <div className="hero-stats">
+          {/* <div className="hero-stats">
             <div className="stat">
               <span className="stat-number">50K+</span>
               <span className="stat-label">Students</span>
@@ -241,7 +241,7 @@ const HomePage = () => {
               <span className="stat-number">4.9</span>
               <span className="stat-label">Avg Rating</span>
             </div>
-          </div>
+          </div> */}
           <div className="hero-buttons">
             <Link to="/scholarship" className="btn btn-primary">
               <i className="fas fa-graduation-cap"></i> Scholarship
